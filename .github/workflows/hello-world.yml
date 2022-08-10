@@ -9,4 +9,9 @@ jobs:
       - name: my-step
         run: chmod +x ci/build-app.sh && ci/build-app.sh
       - name: Test
-        run: chmod +x ci/unit-test-app.sh && ci/unit-test-app.sh 
+        run: chmod +x ci/unit-test-app.sh && ci/unit-test-app.sh
+      - name: Upload Repo
+        uses: actions/upload-artifact@v2
+        with:
+          name: code
+          path: . 
